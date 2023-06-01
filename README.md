@@ -2,7 +2,7 @@
 
 ## Notas.
 
-Antes de iniciar el proyecto, **en caso de no usar Docker**, es necesario configurar las variables de entorno de la base de datos mediante un archivo `.env` (copiar el ejemplo del `.env.example` y configurar las variables `DB_CONNECTION`, `PG_HOST`, `PG_PORT`, `PG_USER`, `PG_PASSWORD` y `PG_DB_NAME` según el entorno).
+Antes de iniciar el proyecto, crear un archivo `.env` en la raíz del proyecto (a partir de `.env.example`). Ajustar en este nuevo archivo las variables de entorno necesarias (si se usa Docker, no es necesario ajustar ninguna variable, solo crear el archivo). **En caso de no usar Docker**, es necesario configurar las variables de entorno de la base de datos en el archivo `.env` (configurar las variables `DB_CONNECTION`, `PG_HOST`, `PG_PORT`, `PG_USER`, `PG_PASSWORD` y `PG_DB_NAME` según el entorno).
 
 ## Sin usar Docker.
 
