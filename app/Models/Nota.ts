@@ -8,7 +8,7 @@ export default class Nota extends BaseModel {
   @column()
   public nota: string
 
-  @column.dateTime({ serialize: (value) => value.toFormat('yyyy-MM-dd') })
+  @column.dateTime()
   public fecha: DateTime
 
   @column.dateTime({ autoCreate: true })

@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:15
+    restart: always
+    volumes:
+      - postgres_volume:/var/lib/postgresql/data
+    environment:
+      - TZ=America/Caracas
+      - POSTGRES_USER=calendar_backend_admin
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=calendar_backend
+    ports:
+      - 5432:5432
+
+  calendario_backend:
+    image: node:alpine
+    restart: always
+    container_name: calendario_backend
+    entrypoint: /bin/sh
+    depends_on:
+      - postgres
+    ports:
+      - ${PORT}:${PORT}
+      - 9229:9229
+    env_file:
+      - .env
+    environment:
+      - TZ=America/Caracas
+      - PG_HOST=postgres
+    volumes:
+      - type: bind
+        source: ./
+        target: /home/node/app
+    working_dir: /home/node/app
+    tty: true
+
+volumes:
+  postgres_volume:

@@ -25,7 +25,6 @@ export default class EditarNotaValidator {
    */
   public schema = schema.create({
     nota: schema.string(),
-    fecha: schema.date({ format: 'yyyy-MM-dd' }),
   })
 
   /**
